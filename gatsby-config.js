@@ -17,6 +17,7 @@ module.exports = {
     author: `Jakub Semik`,
   },
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
