@@ -30,8 +30,11 @@ const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children
     url: `${siteUrl}${pathname || ``}`,
     image: `${siteUrl}${image || defaultImage}`,
   }
+  console.log(seo)
+
   return (
-    <Helmet title={title} defaultTitle={defaultTitle} titleTemplate={`%s | ${siteTitle}`}>
+    <Helmet defer={false}>
+      <title>{seo.title}</title>
       <html lang={siteLanguage} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />

@@ -5,34 +5,42 @@ import styled from '@emotion/styled'
 import Layout from '../components/layout'
 import { graphql, Link } from 'gatsby'
 import BlogEntry from '../components/blogEntry'
+import SEO from '../components/seo'
 
 const Blog = ({
   data: {
     allMarkdownRemark: { edges: posts },
   },
-}) => (
-  <Layout>
-    <Text
-      sx={{
-        fontSize: 4,
-        fontWeight: 'bold',
-        float: 'right',
-        position: 'fixed',
-        top: 10,
-        right: 30,
-        zIndex: 999,
-      }}
-      variant="caps"
-    >
-      <BlogLink to="/blog">HOME</BlogLink>
-    </Text>
-    <Container>
-      {posts.map((post) => (
-        <BlogEntry key={post.node.frontmatter.slug} post={post.node.frontmatter} />
-      ))}
-    </Container>
-  </Layout>
-)
+}) => {
+  const title = 'Blog | Jakub Semik'
+  const description = "Jakub Semik's blog. I write about tech and startups"
+  return (
+    <>
+      <SEO title={title} description={description} />
+      <Layout>
+        <Text
+          sx={{
+            fontSize: 4,
+            fontWeight: 'bold',
+            float: 'right',
+            position: 'fixed',
+            top: 10,
+            right: 30,
+            zIndex: 999,
+          }}
+          variant="caps"
+        >
+          <BlogLink to="/blog">HOME</BlogLink>
+        </Text>
+        <Container>
+          {posts.map((post) => (
+            <BlogEntry key={post.node.frontmatter.slug} post={post.node.frontmatter} />
+          ))}
+        </Container>
+      </Layout>
+    </>
+  )
+}
 
 export const pageQuery = graphql`
   {

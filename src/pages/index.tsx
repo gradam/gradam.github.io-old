@@ -10,6 +10,7 @@ import Projects from '../components/projects'
 import About from '../components/about'
 import Contact from '../components/contact'
 import { Link } from 'gatsby'
+import SEO from '../components/seo'
 
 const Cara = () => {
   const isTablet = useMediaQuery({
@@ -45,6 +46,7 @@ const Cara = () => {
 
   return (
     <Layout>
+      <SEO />
       <Text
         sx={{
           fontSize: 4,

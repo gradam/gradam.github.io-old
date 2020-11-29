@@ -2,7 +2,6 @@
 import React from 'react'
 import { Global } from '@emotion/core'
 import { jsx } from 'theme-ui'
-import SEO from './seo'
 
 type LayoutProps = { children: React.ReactNode; className?: string }
 
@@ -53,7 +52,6 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
         },
       })}
     />
-    <SEO />
     <main className={`${className}`} id="scrollBar">
       {children}
     </main>
