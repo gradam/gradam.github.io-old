@@ -24,9 +24,9 @@ export default function Template({
             fontSize: 4,
             fontWeight: 'bold',
             float: 'right',
-            position: 'fixed',
+            position: 'absolute',
             top: 10,
-            right: 30,
+            right: 55,
             zIndex: 999,
           }}
           variant="caps"
