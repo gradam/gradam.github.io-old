@@ -17,7 +17,13 @@ module.exports = {
     author: `Jakub Semik`,
   },
   plugins: [
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog_assets`,
+        path: `${__dirname}/static/blog_assets`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,6 +31,42 @@ module.exports = {
         path: `${__dirname}/src/sections`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/src/blog`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-plugin-netlify-cms-paths`,
+            options: {
+              cmsConfig: `/static/admin/config.yml`,
+            },
+          },
+          // gatsby-remark-relative-images must go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              // [Optional] The root of "media_folder" in your config.yml
+              staticFolderName: 'static/blog_assets',
+              name: 'blog_assets',
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: { maxWidth: 1024 },
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {},

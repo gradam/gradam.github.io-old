@@ -7,7 +7,7 @@ import SEO from './seo'
 type LayoutProps = { children: React.ReactNode; className?: string }
 
 const Layout = ({ children, className = `` }: LayoutProps) => (
-  <React.Fragment>
+  <>
     <Global
       styles={(theme) => ({
         '*': {
@@ -57,7 +57,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
     <main className={`${className}`} id="scrollBar">
       {children}
     </main>
-  </React.Fragment>
+  </>
 )
 
 export default Layout

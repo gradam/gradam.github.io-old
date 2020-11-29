@@ -1,16 +1,20 @@
 backend:
-  name: test-repo
+  name: git-gateway
 
-media_folder: static/assets
+# when using the default proxy server port
+local_backend: true
+
+media_folder: static/blog_assets
 public_folder: /assets
 
 collections:
   - name: blog
     label: Blog
-    folder: blog
+    folder: src/blog
     create: true
     fields:
-      - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: slug, label: Slug, widget: string }
       - { name: body, label: Body, widget: markdown }
+      - { name: thumbnail, label: Thumbnail, widget: image }
