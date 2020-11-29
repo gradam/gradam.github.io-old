@@ -30,7 +30,6 @@ const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children
     url: `${siteUrl}${pathname || ``}`,
     image: `${siteUrl}${image || defaultImage}`,
   }
-  console.log(seo)
 
   return (
     <Helmet defer={false}>

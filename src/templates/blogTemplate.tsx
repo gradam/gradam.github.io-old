@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Text } from 'theme-ui'
 import styled from '@emotion/styled'
+import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
@@ -34,7 +35,8 @@ export default function Template({
         </Text>
         <Container>
           <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
+          <Img fluid={frontmatter.thumbnail.childImageSharp.fluid} />
+          <h5>Jakub Semik - {frontmatter.date}</h5>
           <BlogPostContent dangerouslySetInnerHTML={{ __html: html }} />
         </Container>
       </Layout>
@@ -81,8 +83,13 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 680px;
-  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: 80px;
+
+  @media only screen and (max-width: 700px) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 `
