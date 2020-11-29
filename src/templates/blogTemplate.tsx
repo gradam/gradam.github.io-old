@@ -88,6 +88,11 @@ const Container = styled.div`
   flex-direction: column;
   margin-top: 80px;
 
+  a {
+    white-space: pre-wrap; /* CSS3 */
+    word-wrap: break-word;
+  }
+
   @media only screen and (max-width: 700px) {
     margin-left: 15px;
     margin-right: 15px;
