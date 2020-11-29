@@ -8,7 +8,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master",
+    "deploy": "yarn build:prod && gh-pages -d public -b master",
+    "build:prod": "gatsby build --prefix-paths ",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
