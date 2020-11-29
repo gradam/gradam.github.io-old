@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: develop
 
 # when using the default proxy server port
 local_backend: true
