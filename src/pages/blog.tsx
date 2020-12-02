@@ -44,7 +44,10 @@ const Blog = ({
 
 export const pageQuery = graphql`
   {
-    allMarkdownRemark(filter: { fileAbsolutePath: { glob: "**/blog/**" } }) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { glob: "**/blog/**" } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           frontmatter {
