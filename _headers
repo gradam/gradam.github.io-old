@@ -13,11 +13,11 @@
   Cache-Control: public, max-age=31536000, immutable
 /component---src-templates-blog-template-tsx-91a531a37f1c017d263e.js
   Cache-Control: public, max-age=31536000, immutable
-/component---src-pages-blog-tsx-d6bd594e3c3d561f809c.js
+/component---src-pages-blog-tsx-ac7bcc69a119b2229d98.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-index-tsx-eb22df1e90cf7abc5aa7.js
   Cache-Control: public, max-age=31536000, immutable
-/webpack-runtime-6c85d8242771243cb0b5.js
+/webpack-runtime-d253310b63bb51f9a73b.js
   Cache-Control: public, max-age=31536000, immutable
 /framework-61416065c0fba8268899.js
   Cache-Control: public, max-age=31536000, immutable
@@ -30,15 +30,25 @@
 /sw.js
   Cache-Control: no-cache
 /offline-plugin-app-shell-fallback/
-  Link: </webpack-runtime-6c85d8242771243cb0b5.js>; rel=preload; as=script
+  Link: </webpack-runtime-d253310b63bb51f9a73b.js>; rel=preload; as=script
   Link: </framework-61416065c0fba8268899.js>; rel=preload; as=script
   Link: </532a2f07-8d0154c2cf59560b38a4.js>; rel=preload; as=script
   Link: </app-bd2c4747d6a05e8dc769.js>; rel=preload; as=script
   Link: </component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/offline-plugin-app-shell-fallback/page-data.json>; rel=preload; as=fetch; crossorigin
+/blog/notes-on-aws-simple-notification-service-sns
+  Link: </webpack-runtime-d253310b63bb51f9a73b.js>; rel=preload; as=script
+  Link: </framework-61416065c0fba8268899.js>; rel=preload; as=script
+  Link: </532a2f07-8d0154c2cf59560b38a4.js>; rel=preload; as=script
+  Link: </app-bd2c4747d6a05e8dc769.js>; rel=preload; as=script
+  Link: </fe3ef3dcb576b044b7174e3ff28104511a85d929-7be08797ee29ce947754.js>; rel=preload; as=script
+  Link: </8317ba0f53f0be4ed4a29c02ca80b214e47a1832-d57e403f6b3df0c7cfb5.js>; rel=preload; as=script
+  Link: </component---src-templates-blog-template-tsx-91a531a37f1c017d263e.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/blog/notes-on-aws-simple-notification-service-sns/page-data.json>; rel=preload; as=fetch; crossorigin
 /blog/how-to-build-an-mvp-in-2-weeks
-  Link: </webpack-runtime-6c85d8242771243cb0b5.js>; rel=preload; as=script
+  Link: </webpack-runtime-d253310b63bb51f9a73b.js>; rel=preload; as=script
   Link: </framework-61416065c0fba8268899.js>; rel=preload; as=script
   Link: </532a2f07-8d0154c2cf59560b38a4.js>; rel=preload; as=script
   Link: </app-bd2c4747d6a05e8dc769.js>; rel=preload; as=script
@@ -48,17 +58,17 @@
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/blog/how-to-build-an-mvp-in-2-weeks/page-data.json>; rel=preload; as=fetch; crossorigin
 /blog/
-  Link: </webpack-runtime-6c85d8242771243cb0b5.js>; rel=preload; as=script
+  Link: </webpack-runtime-d253310b63bb51f9a73b.js>; rel=preload; as=script
   Link: </framework-61416065c0fba8268899.js>; rel=preload; as=script
   Link: </532a2f07-8d0154c2cf59560b38a4.js>; rel=preload; as=script
   Link: </app-bd2c4747d6a05e8dc769.js>; rel=preload; as=script
   Link: </fe3ef3dcb576b044b7174e3ff28104511a85d929-7be08797ee29ce947754.js>; rel=preload; as=script
   Link: </8317ba0f53f0be4ed4a29c02ca80b214e47a1832-d57e403f6b3df0c7cfb5.js>; rel=preload; as=script
-  Link: </component---src-pages-blog-tsx-d6bd594e3c3d561f809c.js>; rel=preload; as=script
+  Link: </component---src-pages-blog-tsx-ac7bcc69a119b2229d98.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/blog/page-data.json>; rel=preload; as=fetch; crossorigin
 /
-  Link: </webpack-runtime-6c85d8242771243cb0b5.js>; rel=preload; as=script
+  Link: </webpack-runtime-d253310b63bb51f9a73b.js>; rel=preload; as=script
   Link: </framework-61416065c0fba8268899.js>; rel=preload; as=script
   Link: </532a2f07-8d0154c2cf59560b38a4.js>; rel=preload; as=script
   Link: </app-bd2c4747d6a05e8dc769.js>; rel=preload; as=script
