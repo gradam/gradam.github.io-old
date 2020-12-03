@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.27.4"/><title data-react-helmet="true">Notes on Amazon Kinesis | Blog | Jakub Semik</title><link data-react-helmet="true" rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/><link data-react-helmet="true" rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/><link data-react-helmet="true" rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/><meta data-react-helmet="true" name="description" content="What is it? Amazon Kinesis is the AWS fully managed solution for collection, processing and analyzing streaming data in the cloud. Kinesis…"/><meta data-react-helmet="true" name="image" content="https://semik.dev/static/341457454987f7f5074ca75092462581/8275e/jeff-dewitt-k739_l2e8ko-unsplash.jpg"/><meta data-react-helmet="true" property="og:title" content="Notes on Amazon Kinesis | Blog | Jakub Semik"/><meta data-react-helmet="true" property="og:url" content="https://semik.dev"/><meta data-react-helmet="true" property="og:description" content="What is it? Amazon Kinesis is the AWS fully managed solution for collection, processing and analyzing streaming data in the cloud. Kinesis…"/><meta data-react-helmet="true" property="og:image" content="https://semik.dev/static/341457454987f7f5074ca75092462581/8275e/jeff-dewitt-k739_l2e8ko-unsplash.jpg"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:image:alt" content="What is it? Amazon Kinesis is the AWS fully managed solution for collection, processing and analyzing streaming data in the cloud. Kinesis…"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:title" content="Notes on Amazon Kinesis | Blog | Jakub Semik"/><meta data-react-helmet="true" name="twitter:url" content="https://semik.dev"/><meta data-react-helmet="true" name="twitter:description" content="What is it? Amazon Kinesis is the AWS fully managed solution for collection, processing and analyzing streaming data in the cloud. Kinesis…"/><meta data-react-helmet="true" name="twitter:image" content="https://semik.dev/static/341457454987f7f5074ca75092462581/8275e/jeff-dewitt-k739_l2e8ko-unsplash.jpg"/><meta data-react-helmet="true" name="twitter:image:alt" content="What is it? Amazon Kinesis is the AWS fully managed solution for collection, processing and analyzing streaming data in the cloud. Kinesis…"/><meta data-react-helmet="true" name="twitter:creator" content="Jakub Semik"/><script data-react-helmet="true" async="" src="https://www.googletagmanager.com/gtag/js?id=G-24PBXSZ379"></script><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#08fdd8"/><link rel="apple-touch-icon" sizes="192x192" href="/android-icon-192x192.png"/><link rel="apple-touch-icon" sizes="512x512" href="/android-icon-512x512.png"/><link as="script" rel="preload" href="/webpack-runtime-cacc1c4aeff1d727cf37.js"/><link as="script" rel="preload" href="/framework-61416065c0fba8268899.js"/><link as="script" rel="preload" href="/532a2f07-8d0154c2cf59560b38a4.js"/><link as="script" rel="preload" href="/app-bd2c4747d6a05e8dc769.js"/><link as="script" rel="preload" href="/fe3ef3dcb576b044b7174e3ff28104511a85d929-1472253acebe1c718067.js"/><link as="script" rel="preload" href="/8317ba0f53f0be4ed4a29c02ca80b214e47a1832-d57e403f6b3df0c7cfb5.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-tsx-91a531a37f1c017d263e.js"/><link as="fetch" rel="preload" href="/page-data/blog/notes-on-amazon-kinesis/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/318001574.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><script>(function() { try {
+  var mode = localStorage.getItem('theme-ui-color-mode');
+  if (!mode) return
+  document.body.classList.add('theme-ui-' + mode);
+} catch (e) {} })();</script><div id="___gatsby"><style data-emotion-css="1b098qt">body{--theme-ui-colors-transparent:var(--theme-ui-colors-transparent,transparent);--theme-ui-colors-black:var(--theme-ui-colors-black,#000);--theme-ui-colors-white:var(--theme-ui-colors-white,#fff);--theme-ui-colors-gray-0:var(--theme-ui-colors-gray-0,null);--theme-ui-colors-gray-1:var(--theme-ui-colors-gray-1,#f7fafc);--theme-ui-colors-gray-2:var(--theme-ui-colors-gray-2,#edf2f7);--theme-ui-colors-gray-3:var(--theme-ui-colors-gray-3,#e2e8f0);--theme-ui-colors-gray-4:var(--theme-ui-colors-gray-4,#cbd5e0);--theme-ui-colors-gray-5:var(--theme-ui-colors-gray-5,#a0aec0);--theme-ui-colors-gray-6:var(--theme-ui-colors-gray-6,#718096);--theme-ui-colors-gray-7:var(--theme-ui-colors-gray-7,#4a5568);--theme-ui-colors-gray-8:var(--theme-ui-colors-gray-8,#2d3748);--theme-ui-colors-gray-9:var(--theme-ui-colors-gray-9,#1a202c);--theme-ui-colors-red-0:var(--theme-ui-colors-red-0,null);--theme-ui-colors-red-1:var(--theme-ui-colors-red-1,#fff5f5);--theme-ui-colors-red-2:var(--theme-ui-colors-red-2,#fed7d7);--theme-ui-colors-red-3:var(--theme-ui-colors-red-3,#feb2b2);--theme-ui-colors-red-4:var(--theme-ui-colors-red-4,#fc8181);--theme-ui-colors-red-5:var(--theme-ui-colors-red-5,#f56565);--theme-ui-colors-red-6:var(--theme-ui-colors-red-6,#e53e3e);--theme-ui-colors-red-7:var(--theme-ui-colors-red-7,#c53030);--theme-ui-colors-red-8:var(--theme-ui-colors-red-8,#9b2c2c);--theme-ui-colors-red-9:var(--theme-ui-colors-red-9,#742a2a);--theme-ui-colors-orange-0:var(--theme-ui-colors-orange-0,null);--theme-ui-colors-orange-1:var(--theme-ui-colors-orange-1,#fffaf0);--theme-ui-colors-orange-2:var(--theme-ui-colors-orange-2,#feebc8);--theme-ui-colors-orange-3:var(--theme-ui-colors-orange-3,#fbd38d);--theme-ui-colors-orange-4:var(--theme-ui-colors-orange-4,#f6ad55);--theme-ui-colors-orange-5:var(--theme-ui-colors-orange-5,#ed8936);--theme-ui-colors-orange-6:var(--theme-ui-colors-orange-6,#dd6b20);--theme-ui-colors-orange-7:var(--theme-ui-colors-orange-7,#c05621);--theme-ui-colors-orange-8:var(--theme-ui-colors-orange-8,#9c4221);--theme-ui-colors-orange-9:var(--theme-ui-colors-orange-9,#7b341e);--theme-ui-colors-yellow-0:var(--theme-ui-colors-yellow-0,null);--theme-ui-colors-yellow-1:var(--theme-ui-colors-yellow-1,#fffff0);--theme-ui-colors-yellow-2:var(--theme-ui-colors-yellow-2,#fefcbf);--theme-ui-colors-yellow-3:var(--theme-ui-colors-yellow-3,#faf089);--theme-ui-colors-yellow-4:var(--theme-ui-colors-yellow-4,#f6e05e);--theme-ui-colors-yellow-5:var(--theme-ui-colors-yellow-5,#ecc94b);--theme-ui-colors-yellow-6:var(--theme-ui-colors-yellow-6,#d69e2e);--theme-ui-colors-yellow-7:var(--theme-ui-colors-yellow-7,#b7791f);--theme-ui-colors-yellow-8:var(--theme-ui-colors-yellow-8,#975a16);--theme-ui-colors-yellow-9:var(--theme-ui-colors-yellow-9,#744210);--theme-ui-colors-green-0:var(--theme-ui-colors-green-0,null);--theme-ui-colors-green-1:var(--theme-ui-colors-green-1,#f0fff4);--theme-ui-colors-green-2:var(--theme-ui-colors-green-2,#c6f6d5);--theme-ui-colors-green-3:var(--theme-ui-colors-green-3,#9ae6b4);--theme-ui-colors-green-4:var(--theme-ui-colors-green-4,#68d391);--theme-ui-colors-green-5:var(--theme-ui-colors-green-5,#48bb78);--theme-ui-colors-green-6:var(--theme-ui-colors-green-6,#38a169);--theme-ui-colors-green-7:var(--theme-ui-colors-green-7,#2f855a);--theme-ui-colors-green-8:var(--theme-ui-colors-green-8,#276749);--theme-ui-colors-green-9:var(--theme-ui-colors-green-9,#22543d);--theme-ui-colors-teal-0:var(--theme-ui-colors-teal-0,null);--theme-ui-colors-teal-1:var(--theme-ui-colors-teal-1,#e6fffa);--theme-ui-colors-teal-2:var(--theme-ui-colors-teal-2,#b2f5ea);--theme-ui-colors-teal-3:var(--theme-ui-colors-teal-3,#81e6d9);--theme-ui-colors-teal-4:var(--theme-ui-colors-teal-4,#4fd1c5);--theme-ui-colors-teal-5:var(--theme-ui-colors-teal-5,#38b2ac);--theme-ui-colors-teal-6:var(--theme-ui-colors-teal-6,#319795);--theme-ui-colors-teal-7:var(--theme-ui-colors-teal-7,#2c7a7b);--theme-ui-colors-teal-8:var(--theme-ui-colors-teal-8,#285e61);--theme-ui-colors-teal-9:var(--theme-ui-colors-teal-9,#234e52);--theme-ui-colors-blue-0:var(--theme-ui-colors-blue-0,null);--theme-ui-colors-blue-1:var(--theme-ui-colors-blue-1,#ebf8ff);--theme-ui-colors-blue-2:var(--theme-ui-colors-blue-2,#bee3f8);--theme-ui-colors-blue-3:var(--theme-ui-colors-blue-3,#90cdf4);--theme-ui-colors-blue-4:var(--theme-ui-colors-blue-4,#63b3ed);--theme-ui-colors-blue-5:var(--theme-ui-colors-blue-5,#4299e1);--theme-ui-colors-blue-6:var(--theme-ui-colors-blue-6,#3182ce);--theme-ui-colors-blue-7:var(--theme-ui-colors-blue-7,#2b6cb0);--theme-ui-colors-blue-8:var(--theme-ui-colors-blue-8,#2c5282);--theme-ui-colors-blue-9:var(--theme-ui-colors-blue-9,#2a4365);--theme-ui-colors-indigo-0:var(--theme-ui-colors-indigo-0,null);--theme-ui-colors-indigo-1:var(--theme-ui-colors-indigo-1,#ebf4ff);--theme-ui-colors-indigo-2:var(--theme-ui-colors-indigo-2,#c3dafe);--theme-ui-colors-indigo-3:var(--theme-ui-colors-indigo-3,#a3bffa);--theme-ui-colors-indigo-4:var(--theme-ui-colors-indigo-4,#7f9cf5);--theme-ui-colors-indigo-5:var(--theme-ui-colors-indigo-5,#667eea);--theme-ui-colors-indigo-6:var(--theme-ui-colors-indigo-6,#5a67d8);--theme-ui-colors-indigo-7:var(--theme-ui-colors-indigo-7,#4c51bf);--theme-ui-colors-indigo-8:var(--theme-ui-colors-indigo-8,#434190);--theme-ui-colors-indigo-9:var(--theme-ui-colors-indigo-9,#3c366b);--theme-ui-colors-purple-0:var(--theme-ui-colors-purple-0,null);--theme-ui-colors-purple-1:var(--theme-ui-colors-purple-1,#faf5ff);--theme-ui-colors-purple-2:var(--theme-ui-colors-purple-2,#e9d8fd);--theme-ui-colors-purple-3:var(--theme-ui-colors-purple-3,#d6bcfa);--theme-ui-colors-purple-4:var(--theme-ui-colors-purple-4,#b794f4);--theme-ui-colors-purple-5:var(--theme-ui-colors-purple-5,#9f7aea);--theme-ui-colors-purple-6:var(--theme-ui-colors-purple-6,#805ad5);--theme-ui-colors-purple-7:var(--theme-ui-colors-purple-7,#6b46c1);--theme-ui-colors-purple-8:var(--theme-ui-colors-purple-8,#553c9a);--theme-ui-colors-purple-9:var(--theme-ui-colors-purple-9,#44337a);--theme-ui-colors-pink-0:var(--theme-ui-colors-pink-0,null);--theme-ui-colors-pink-1:var(--theme-ui-colors-pink-1,#fff5f7);--theme-ui-colors-pink-2:var(--theme-ui-colors-pink-2,#fed7e2);--theme-ui-colors-pink-3:var(--theme-ui-colors-pink-3,#fbb6ce);--theme-ui-colors-pink-4:var(--theme-ui-colors-pink-4,#f687b3);--theme-ui-colors-pink-5:var(--theme-ui-colors-pink-5,#ed64a6);--theme-ui-colors-pink-6:var(--theme-ui-colors-pink-6,#d53f8c);--theme-ui-colors-pink-7:var(--theme-ui-colors-pink-7,#b83280);--theme-ui-colors-pink-8:var(--theme-ui-colors-pink-8,#97266d);--theme-ui-colors-pink-9:var(--theme-ui-colors-pink-9,#702459);--theme-ui-colors-grayDark:var(--theme-ui-colors-grayDark,#2d3748);--theme-ui-colors-text:var(--theme-ui-colors-text,#e2e8f0);--theme-ui-colors-background:var(--theme-ui-colors-background,#141821);--theme-ui-colors-primary:var(--theme-ui-colors-primary,#08fdd8);--theme-ui-colors-primaryHover:var(--theme-ui-colors-primaryHover,#2c5282);--theme-ui-colors-secondary:var(--theme-ui-colors-secondary,#5a67d8);--theme-ui-colors-muted:var(--theme-ui-colors-muted,#e2e8f0);--theme-ui-colors-success:var(--theme-ui-colors-success,#9ae6b4);--theme-ui-colors-info:var(--theme-ui-colors-info,#63b3ed);--theme-ui-colors-warning:var(--theme-ui-colors-warning,#faf089);--theme-ui-colors-danger:var(--theme-ui-colors-danger,#feb2b2);--theme-ui-colors-light:var(--theme-ui-colors-light,#f7fafc);--theme-ui-colors-dark:var(--theme-ui-colors-dark,#2d3748);--theme-ui-colors-textMuted:var(--theme-ui-colors-textMuted,#a0aec0);--theme-ui-colors-heading:var(--theme-ui-colors-heading,#fff);--theme-ui-colors-divider:var(--theme-ui-colors-divider,#2d3748);--theme-ui-colors-icon_brightest:var(--theme-ui-colors-icon_brightest,#fff);--theme-ui-colors-icon_darker:var(--theme-ui-colors-icon_darker,#4a5568);--theme-ui-colors-icon_darkest:var(--theme-ui-colors-icon_darkest,#2d3748);--theme-ui-colors-icon_red:var(--theme-ui-colors-icon_red,#e53e3e);--theme-ui-colors-icon_blue:var(--theme-ui-colors-icon_blue,#3182ce);--theme-ui-colors-icon_orange:var(--theme-ui-colors-icon_orange,#ed8936);--theme-ui-colors-icon_yellow:var(--theme-ui-colors-icon_yellow,#ecc94b);--theme-ui-colors-icon_pink:var(--theme-ui-colors-icon_pink,#ed64a6);--theme-ui-colors-icon_purple:var(--theme-ui-colors-icon_purple,#805ad5);--theme-ui-colors-icon_green:var(--theme-ui-colors-icon_green,#48bb78);color:var(--theme-ui-colors-text,#e2e8f0);background-color:var(--theme-ui-colors-background,#141821);}body.theme-ui-light{--theme-ui-colors-text:var(--theme-ui-colors-modes-light-text,#2d3748);--theme-ui-colors-heading:var(--theme-ui-colors-modes-light-heading,#000);--theme-ui-colors-primary:var(--theme-ui-colors-modes-light-primary,#c05621);--theme-ui-colors-background:var(--theme-ui-colors-modes-light-background,#f7fafc);--theme-ui-colors-divider:var(--theme-ui-colors-modes-light-divider,#edf2f7);--theme-ui-colors-textMuted:var(--theme-ui-colors-modes-light-textMuted,#718096);--theme-ui-colors-icon_brightest:var(--theme-ui-colors-modes-light-icon_brightest,#edf2f7);--theme-ui-colors-icon_darker:var(--theme-ui-colors-modes-light-icon_darker,#cbd5e0);--theme-ui-colors-icon_darkest:var(--theme-ui-colors-modes-light-icon_darkest,#718096);}</style><style data-emotion-css="secsed">*{box-sizing:border-box;}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";line-height:1.625;font-weight:400;padding:0;box-sizing:border-box;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--theme-ui-colors-text,#e2e8f0);background-color:var(--theme-ui-colors-background,#141821);}body a{color:var(--theme-ui-colors-primary,#08fdd8);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}body a:hover{color:var(--theme-ui-colors-primary,#08fdd8);-webkit-text-decoration:none;text-decoration:none;}</style><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion-css="vvqps2">*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}html{font-size:18px;-webkit-text-size-adjust:100%;}img{border-style:none;}pre{font-family:monospace;font-size:1em;}[hidden]{display:none;}::selection{background-color:var(--theme-ui-colors-primary,#08fdd8);color:var(--theme-ui-colors-background,#141821);}#scrollBar > div::-webkit-scrollbar{width:5px;}#scrollBar > div::-webkit-scrollbar-track{opacity:1;background:#00000000;}#scrollBar > div::-webkit-scrollbar-thumb{background-color:#08fdd8;}</style><main class="" id="scrollBar"><style data-emotion-css="1p6wydj">.css-1p6wydj{box-sizing:border-box;margin:0;min-width:0;font-size:1.875rem;font-weight:700;float:right;position:absolute;top:10px;right:55px;z-index:999;}</style><div class="css-1p6wydj"><style data-emotion-css="lie663">.css-lie663{color:white;}.css-lie663:hover{color:#08fdd8;}</style><a class="css-lie663 e15xpof31" href="/blog">HOME</a></div><style data-emotion-css="1q1ognh">.css-1q1ognh{margin-left:auto;margin-right:auto;max-width:680px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;margin-top:80px;}.css-1q1ognh a{white-space:pre-wrap;word-wrap:break-word;}@media only screen and (max-width:700px){.css-1q1ognh{margin-left:15px;margin-right:15px;}}</style><div class="css-1q1ognh e15xpof32"><h1>Notes on Amazon Kinesis</h1><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden"><div aria-hidden="true" style="width:100%;padding-bottom:66.66666666666667%"></div><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAQL/xAAVAQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEAMQAAABm2hZIOQf/8QAGRAAAgMBAAAAAAAAAAAAAAAAAQIAAyIh/9oACAEBAAEFAk2Y2TU0eyDo/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGxAAAgIDAQAAAAAAAAAAAAAAABEBIQISgaH/2gAIAQEABj8Croo9EaqhRjAz/8QAGhABAAIDAQAAAAAAAAAAAAAAAQARITFhUf/aAAgBAQABPyE6GCMLS5eIssLOwAabb7A0TSD5ABTc/9oADAMBAAIAAwAAABCE7//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/EKr/xAAWEQADAAAAAAAAAAAAAAAAAAABEBH/2gAIAQIBAT8QgX//xAAcEAEAAwACAwAAAAAAAAAAAAABABEhMUFxgdH/2gAIAQEAAT8QRtgtVwEKdJki3wlkpitKuBfqyq+0MVJsceI8NC+Wf//Z" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/341457454987f7f5074ca75092462581/01f8d/jeff-dewitt-k739_l2e8ko-unsplash.jpg 375w,
+/static/341457454987f7f5074ca75092462581/f9913/jeff-dewitt-k739_l2e8ko-unsplash.jpg 750w,
+/static/341457454987f7f5074ca75092462581/37d86/jeff-dewitt-k739_l2e8ko-unsplash.jpg 1500w,
+/static/341457454987f7f5074ca75092462581/2d44f/jeff-dewitt-k739_l2e8ko-unsplash.jpg 2250w,
+/static/341457454987f7f5074ca75092462581/b2131/jeff-dewitt-k739_l2e8ko-unsplash.jpg 3000w,
+/static/341457454987f7f5074ca75092462581/efd11/jeff-dewitt-k739_l2e8ko-unsplash.jpg 5194w" sizes="(max-width: 1500px) 100vw, 1500px" /><img loading="lazy" sizes="(max-width: 1500px) 100vw, 1500px" srcset="/static/341457454987f7f5074ca75092462581/01f8d/jeff-dewitt-k739_l2e8ko-unsplash.jpg 375w,
+/static/341457454987f7f5074ca75092462581/f9913/jeff-dewitt-k739_l2e8ko-unsplash.jpg 750w,
+/static/341457454987f7f5074ca75092462581/37d86/jeff-dewitt-k739_l2e8ko-unsplash.jpg 1500w,
+/static/341457454987f7f5074ca75092462581/2d44f/jeff-dewitt-k739_l2e8ko-unsplash.jpg 2250w,
+/static/341457454987f7f5074ca75092462581/b2131/jeff-dewitt-k739_l2e8ko-unsplash.jpg 3000w,
+/static/341457454987f7f5074ca75092462581/efd11/jeff-dewitt-k739_l2e8ko-unsplash.jpg 5194w" src="/static/341457454987f7f5074ca75092462581/37d86/jeff-dewitt-k739_l2e8ko-unsplash.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h5>Jakub Semik - <!-- -->December 03, 2020</h5><style data-emotion-css="8atqhb">.css-8atqhb{width:100%;}</style><div class="css-8atqhb e15xpof30"><h1>What is it?</h1>
+<p>Amazon Kinesis is the AWS fully managed solution for <strong>collection</strong>, <strong>processing</strong> and <strong>analyzing streaming data</strong> in the cloud.</p>
+<p>Kinesis can handle a huge amount of data from hundreds of thousands of sources and make it available within milliseconds for real-time processing.</p>
+<p><strong>Need rea time? -> Kinesis!</strong></p>
+<h1>Streaming Data Examples</h1>
+<p>Streaming data source can be anything that, well… produces a constant stream of data, most of the time we receive data from multiple sources.</p>
+<ul>
+<li>Cryptocurrency Prices</li>
+<li>weather data</li>
+<li>Twitter data</li>
+<li>CCTV cameras</li>
+<li>Online games data</li>
+</ul>
+<h1>4 Types of Kinesis Streams</h1>
+<h2>Kinesis Data Streams (KDS)</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 776px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62.109375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2klEQVQoz5VSwW7UQAzNz/EfXDhxQfwHqoTErSAOiBOXShU3EKAipBVIHBboVl1akpJNE7LZbiaZzGQmD9th0uUAAktWxhP7+b2xo67r0PcWjtwYQ+cebMMwiHs3TOddZ+NcrrHWobc9GCvSWqMoK8TZD9R1/Rvgn2wXUCmFrIhRVvkIaD2g0wXU7Bk85XFH/MJSlceLx1skJy1Mr9E0Gt77CdhaK6CvnlaYv1FwgyFAKl4vZlgd7qEneZwUyH3/WmPv9ifMZwXaTmG93giLa0BDDRwe3DnF8/0Vc0bECY02WNcaLF8YkjGTttXIswqXWY6yLCluBZCbimR6N+d6zE/nSLILOjtEo0R6aAIIb8IFXCySnEUcx1gul/KPc/ifIXaaGtbtFjcf3cDDo3vSJBqnZOl9xuSmaSTebDbydc4LUBgYOyvpTCc5xnY4eP8EH8/fkSwCZGbn3xK8fP1WZDIgG9PnQo7TNEWSJALK7NintaGVOfoALM5IqKcp82VelDhZnk0MwhuGmMHZQxzWhndXKYtbd49xf/+Cb2jKJOtqWyNdXU6L+q97yLXGWHz+kpGCipraETBI5e8u4N+cjXPHM6saBHxcGwLL81wS/odhGGheFDSgK1mpn4ZjnQSwWIcZAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/c1c8d95c7ce7a53fa8f51df311e7c430/f4e34/untitled-diagram.webp 256w,
+/static/c1c8d95c7ce7a53fa8f51df311e7c430/bd5dd/untitled-diagram.webp 512w,
+/static/c1c8d95c7ce7a53fa8f51df311e7c430/bac22/untitled-diagram.webp 776w"
+          sizes="(max-width: 776px) 100vw, 776px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/c1c8d95c7ce7a53fa8f51df311e7c430/6f3f2/untitled-diagram.png 256w,
+/static/c1c8d95c7ce7a53fa8f51df311e7c430/01e7c/untitled-diagram.png 512w,
+/static/c1c8d95c7ce7a53fa8f51df311e7c430/167b5/untitled-diagram.png 776w"
+          sizes="(max-width: 776px) 100vw, 776px"
+          type="image/png"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/c1c8d95c7ce7a53fa8f51df311e7c430/167b5/untitled-diagram.png"
+          alt="Image for post"
+          title="Image for post"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+    </span></p>
+<p>In this stream type, we have producers and consumers. We also have shards in KDS itself. With this approach, we also have the biggest flexibility in terms of what we want to do with the data inside shards and where we want to put it as we can choose an unlimited number of consumers but we have to configure them manually. Data within this stream is promised to be ordered and it can persist from <strong>24 hours</strong> (default) up to <strong>168 hours</strong>.</p>
+<p><strong>How do you pay?</strong></p>
+<p>You pay per running shard.</p>
+<h2>Kinesis Firehose Delivery Stream</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 776px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62.109375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB5UlEQVQoz5VSS24TQRCdO3EObsCWFbfIARLBhhWcgBUKQkKKJRYEEUhAAikMsUkg2OMZO7bbM/3vnkdVOx05CxCUVNPTXVWvXn0KYwy8dwik1lr692Dp+z5pDP3N/7ayhBAgZYdVO8e6XUJrjYI/s6slfk7naNv2FuCfJNuYiJIKhy8uUZ7M4KNF4SKgJyW6o2eI5Mcss0gRcfB0jfGZgQuGGJhbiRjQGo/d+0O8fFIzZwIk+6I8QrW/B0/lOeeQY5qxxM69j3g/mEIagcVCJHsWTh5CxOd3E/z6LhCiR8E9lNpi0erUg8wwxgilNDoh4bZYK6VuQL3zBOhxsfyCuRrTnRgmAG40AXD/uq5LARzonYUmtq2NqKdVeuNB8GnZRglbtcbdvTt4+GonJUmADMDTYkApZbqvViuavEUtgUpYnJVfKZlMgFyJsSb5OOrj2+EAo9kpempZwcwuflxi8PpNKpMB80pwyT2VFL3brNC1nQFZGCxSD+uSqqj5TlNmVs3sCt9G54lhXpt43QKXlVhne540vznr8ejBCM8fV6CR0pTpUaxbTKo6Oeeh/Msecqwh/8ODc5x+4ni7Acyl8LkN+DfNa8Mx2lD/w2YWm7UhsKZpksP/MOSKhBA4/nCM4XCUevsbfi6dZabSFGoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/7f01fc1a24221490f445039702b7f900/f4e34/untitled-diagram-1-.webp 256w,
+/static/7f01fc1a24221490f445039702b7f900/bd5dd/untitled-diagram-1-.webp 512w,
+/static/7f01fc1a24221490f445039702b7f900/bac22/untitled-diagram-1-.webp 776w"
+          sizes="(max-width: 776px) 100vw, 776px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/7f01fc1a24221490f445039702b7f900/6f3f2/untitled-diagram-1-.png 256w,
+/static/7f01fc1a24221490f445039702b7f900/01e7c/untitled-diagram-1-.png 512w,
+/static/7f01fc1a24221490f445039702b7f900/167b5/untitled-diagram-1-.png 776w"
+          sizes="(max-width: 776px) 100vw, 776px"
+          type="image/png"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/7f01fc1a24221490f445039702b7f900/167b5/untitled-diagram-1-.png"
+          alt="Image for post"
+          title="Image for post"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+    </span></p>
+<p>You can think of Firehose Delivery Stream: Data streams but simpler. It allows you to convert incoming data from one format to another, compress it and secure it.</p>
+<p>The main differences are:</p>
+<ul>
+<li>You can only choose one consumer from a predefined list: (<strong>S3</strong>, <strong>Redshift</strong>, <strong>Elasticsearch</strong>, <strong>Splunk</strong>)</li>
+<li>Data disappears immediately after consumption.</li>
+</ul>
+<p><strong>How do you pay?</strong></p>
+<p>Think serverless, You pay just for the data you ingested.</p>
+<h2>Kinesis Data Analytics (KDA)</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1024px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 59.375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACBklEQVQoz4WSy28SURTG+Yfcu3Hn1hjT1IVbE90ZF41JDfEdNzVRow3RhYla4yskRhM3bUyE2lJSnCIgjwEKHShKgGFgYHjMzM+ZodCx1HpmztybOd/33fudez2maYL1GrqJaVhTa27HYDBEzGYolvIUdrJkt9OkMgkkScLcA9mjzdH1PZIVHl3XaSoyLVVGVuq02i2n0O/12QivsymEiMYjrIcDBFa/EIvFMAzDSbk54intBrJcp9vV8JgYZH5uE9soEg3l2C39nqyWE5q8mBfx3y7z1ltmxVej1x1M6juFMsKaSDJSJp3Io6ptPHYh+KbKvZk0j8/uUkr0rT+6bYhv/grzJyIszCS5dlzk0WwJTR1iu7KahBhucf9cioezRbY+dUeW7c/HxRw3T4e4cTJKPFijr3csKw2WlzLcORPh9S2RV94cL+ck6r/azk6UTo3ghwLXT4V4cilOYKm6L7i5XMF3+Ydjr1rQJpa+vpe4cGyFB+cF/Asivotp1MZwUi8mFZ5djfHubpbkWnMkOD4xdxi64YyZ73V8c1GeXhF47k3webFkHZY+whjTPFvLM57YADvdV2IcUsVquKbsXxUXxuG4eB43aCqtZ9gzSG1JtOXe1EIH8RPBw7Y+BtQkjYKgspvu/CV4WKv+Kegm9Dq6I5oXWrTqgyPFjhQ8SNRUHVX+v+AfFJx+lU+MI9UAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/36aa257b5dac84896c6b5ee1ac0989af/f4e34/data-analytis.webp 256w,
+/static/36aa257b5dac84896c6b5ee1ac0989af/bd5dd/data-analytis.webp 512w,
+/static/36aa257b5dac84896c6b5ee1ac0989af/a9a89/data-analytis.webp 1024w,
+/static/36aa257b5dac84896c6b5ee1ac0989af/e8403/data-analytis.webp 1238w"
+          sizes="(max-width: 1024px) 100vw, 1024px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/36aa257b5dac84896c6b5ee1ac0989af/6f3f2/data-analytis.png 256w,
+/static/36aa257b5dac84896c6b5ee1ac0989af/01e7c/data-analytis.png 512w,
+/static/36aa257b5dac84896c6b5ee1ac0989af/2bef9/data-analytis.png 1024w,
+/static/36aa257b5dac84896c6b5ee1ac0989af/d8817/data-analytis.png 1238w"
+          sizes="(max-width: 1024px) 100vw, 1024px"
+          type="image/png"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/36aa257b5dac84896c6b5ee1ac0989af/2bef9/data-analytis.png"
+          alt="Image for post"
+          title="Image for post"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+    </span></p>
+<p>Kinesis Data Analytics is used to analyze data passed between two Kinesis streams. You can use <strong>custom SQL</strong> for data processing and querying. It is great for great time data analytics.</p>
+<p>You can pass either Firehose or Data Streams as an input and an output.</p>
+<h2>Kinesis Video Streams</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 776px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62.109375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABp0lEQVQoz41Ty04CQRDcL/UP/Bd/wHgxHv0GLiQmQjwYJGGVKGvYV1h29v0upxpmhQMJkzTsztRUV1f3WlVVoW1bdF2Huq7lmWsYBom+G8bn0+DinTzPEe8iJHGMsixhkTAIAmw2G2RZdkZ4aZkzYvOiwOJnDSfw0GhBFlWRNFZKAE3TjBfzuMfkMYX7VaHuKhRFiVJjR4Uan1Ulbp7v8fA2lT2LJCRb2Z9SAgmNOPc7w93tAu8vIdJCIYpiqCQZCYmtdDxNJ3hd21r6kTDRINd1DwCtgKvve1Gk9rne78ZSeW6qoADatA93UNEeBT1kyWK+JiA5AbxQaG/MxSRNJCkxTdOOZ/xXurogDBCGobxbPCCpOnrIrnEv1l0TQl2G4zjSNCYmht3kHYNZLpfwfV8UW4cya1E2aAUkNOUwIwmojGH2SGgwJJ3P50IqY9M0NbZ+hI/VRnfwfw6NBabzDPN+1pSjp0wkJfPH90M4v1udTckoXDuHJKJKz/OQpqkks4zxVEogvTn9Ui6FGWxaNZvNYNu2JJAvhb7RVHp5SniNQjNm3GO1f/jvox04JbLVAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/ab49553318ffcb887eea4a06d509b0f6/f4e34/untitled-diagram-2-.webp 256w,
+/static/ab49553318ffcb887eea4a06d509b0f6/bd5dd/untitled-diagram-2-.webp 512w,
+/static/ab49553318ffcb887eea4a06d509b0f6/bac22/untitled-diagram-2-.webp 776w"
+          sizes="(max-width: 776px) 100vw, 776px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/ab49553318ffcb887eea4a06d509b0f6/6f3f2/untitled-diagram-2-.png 256w,
+/static/ab49553318ffcb887eea4a06d509b0f6/01e7c/untitled-diagram-2-.png 512w,
+/static/ab49553318ffcb887eea4a06d509b0f6/167b5/untitled-diagram-2-.png 776w"
+          sizes="(max-width: 776px) 100vw, 776px"
+          type="image/png"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/ab49553318ffcb887eea4a06d509b0f6/167b5/untitled-diagram-2-.png"
+          alt="Image for post"
+          title="Image for post"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+    </span></p>
+<p>Allows you to ingest video and audio data from various sources to analytics, machine learning (ML), playback, and other processing.</p></div></div></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/notes-on-amazon-kinesis";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-f33cc994945b2249d5ee.js"],"app":["/app-bd2c4747d6a05e8dc769.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"],"component---src-pages-blog-tsx":["/component---src-pages-blog-tsx-ac7bcc69a119b2229d98.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-eb22df1e90cf7abc5aa7.js"],"component---src-templates-blog-template-tsx":["/component---src-templates-blog-template-tsx-91a531a37f1c017d263e.js"]};/*]]>*/</script><script src="/polyfill-f33cc994945b2249d5ee.js" nomodule=""></script><script src="/component---src-templates-blog-template-tsx-91a531a37f1c017d263e.js" async=""></script><script src="/8317ba0f53f0be4ed4a29c02ca80b214e47a1832-d57e403f6b3df0c7cfb5.js" async=""></script><script src="/fe3ef3dcb576b044b7174e3ff28104511a85d929-1472253acebe1c718067.js" async=""></script><script src="/app-bd2c4747d6a05e8dc769.js" async=""></script><script src="/532a2f07-8d0154c2cf59560b38a4.js" async=""></script><script src="/framework-61416065c0fba8268899.js" async=""></script><script src="/webpack-runtime-cacc1c4aeff1d727cf37.js" async=""></script></body></html>
