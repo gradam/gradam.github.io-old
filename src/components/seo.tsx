@@ -53,19 +53,6 @@ const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children
       <link rel="icon" type="image/png" sizes="32x32" href={withPrefix(`/favicon-32x32.png`)} />
       <link rel="icon" type="image/png" sizes="16x16" href={withPrefix(`/favicon-16x16.png`)} />
       <link rel="apple-touch-icon" sizes="180x180" href={withPrefix(`/apple-touch-icon.png`)} />
-
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-24PBXSZ379"></script>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-24PBXSZ379');
-        `,
-        }}
-      />
       {children}
     </Helmet>
   )
