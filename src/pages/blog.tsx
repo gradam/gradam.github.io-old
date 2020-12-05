@@ -23,7 +23,7 @@ const Blog = ({
             fontSize: 4,
             fontWeight: 'bold',
             float: 'right',
-            position: 'fixed',
+            position: 'absolute',
             top: 10,
             right: 30,
             zIndex: 999,
