@@ -10,7 +10,7 @@ Amazon Kinesis is the AWS fully managed solution for **collection**, **process
 
 Kinesis can handle a huge amount of data from hundreds of thousands of sources and make it available within milliseconds for real-time processing.
 
-**Need rea time? -> Kinesis!**
+**Need real time? -> Kinesis!**
 
 # Streaming Data Examples
 
