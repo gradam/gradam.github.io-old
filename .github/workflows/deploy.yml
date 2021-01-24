@@ -13,7 +13,7 @@ jobs:
           persist-credentials: false
 
       - name: Install autoreconf
-        run: sudo apt-get install autoconf automake pkg-config libgtk-3-dev
+        run: sudo apt-get install autoconf automake pkg-config libgtk-3-dev dh-autoreconf
 
       - name: Yarn install
         uses: Borales/actions-yarn@v2.3.0
@@ -22,7 +22,7 @@ jobs:
       - name: Yarn build
         uses: Borales/actions-yarn@v2.3.0
         with:
-          cmd: build:prod # will run `yarn install` command
+          cmd: build:prod # will run `yarn build:prod` command
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
