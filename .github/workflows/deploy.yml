@@ -18,14 +18,11 @@ jobs:
       - name: autoreconf --version
         run: autoreconf --version
 
-      - name: Yarn install
-        uses: Borales/actions-yarn@v2.3.0
+      - uses: actions/setup-node@v2
         with:
-          cmd: install # will run `yarn install` command
-      - name: Yarn build
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: build:prod # will run `yarn build:prod` command
+          node-version: '14.x'
+      - run: yarn install
+      - run: yarn build:prod
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
