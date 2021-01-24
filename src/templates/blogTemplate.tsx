@@ -26,7 +26,7 @@ export default function Template({
             float: 'right',
             position: 'absolute',
             top: 10,
-            right: 30,
+            right: 55,
             zIndex: 999,
           }}
           variant="caps"
