@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
   branch: develop
+  repo: gradam/gradam.github.io
+  site_domain: amazing-wing-9249d7.netlify.com
 
 # when using the default proxy server port
 local_backend: true
